@@ -13,12 +13,9 @@ module.exports = (sequelize, DataTypes) => {
 
     aluno.associate = (models)=>{
         aluno.belongsToMany(models.Turma,{
-            as:'aluno_turma',
-            through:'alunos_has_turmas',
-            foreignKey:'aluno_id',
-            otherKey:'turma_id',
-            timestamps: false,
-            numero_faltas: DataTypes.INTEGER
+            as:'turma_alunos',
+            through:models.AlunoTurma,
+            foreignKey:'turma_id',
         })   
     }
 

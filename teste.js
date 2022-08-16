@@ -1,16 +1,17 @@
-const { sequelize, Turma, alunos_has_turmas } = require('./database/models')
+const { sequelize, AlunoTurma} = require('./database/models')
 
-
-
-async function busca() {
-    const turmas = await Turma.update({
-        numero_faltas: 2,
-        where: { id: 4 }
-
+async function busca(){
+    const retorna = await AlunoTurma.update({
+        'numero_faltas': 3,
+    },
+    {
+        where:{id:4}
     })
-    console.log(turmas)
-
+    console.log(retorna)
 
 }
 busca()
+
+
+
 
