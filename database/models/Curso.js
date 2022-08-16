@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         curso.belongsTo(models.Area, {
             foreignKey: 'area_id'
         })
+
+        curso.hasMany(models.Turma, {
+            foreignKey: 'curso_id',
+            as: 'turma_curso'
+        })
     }
     return curso
 }

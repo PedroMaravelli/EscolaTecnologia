@@ -7,5 +7,10 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'professores',
         timestamps: false
     })
+    professor.associate = (models) =>{
+        professor.hasMany(models.Turma,{
+            foreignKey: 'professor_id'
+        })
+    }
     return professor
 }
