@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
 
         curso.hasMany(models.Turma, {
             foreignKey: 'curso_id',
-            as: 'turma_curso'
         })
     }
     return curso

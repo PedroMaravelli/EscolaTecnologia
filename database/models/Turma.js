@@ -23,12 +23,10 @@ module.exports = (sequelize, DataTypes) => {
 
         turma.belongsTo(models.Professor,{
             foreignKey:'professor_id',
-            as: 'professor'
         })
         
         turma.belongsTo(models.Curso,{
             foreignKey:'curso_id',
-            as: 'curso_turma'
         })
     }
     return turma
