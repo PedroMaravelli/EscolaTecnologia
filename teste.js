@@ -1,13 +1,9 @@
-const { sequelize, AlunoTurma} = require('./database/models')
+const { sequelize, Professor} = require('./database/models')
 
 async function busca(){
-    const retorna = await AlunoTurma.update({
-        'numero_faltas': 3,
-    },
-    {
-        where:{id:4}
-    })
-    console.log(retorna)
+    const retorna = await Professor.findByPk(3,
+        {include:['turmaProf']})
+    console.log(retorna.toJSON())
 
 }
 busca()

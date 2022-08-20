@@ -1,8 +1,16 @@
-
+const {sequelize, Turma} = require('../database/models')
 
 const turmasController = {
     turma: async(req,res) =>{
-        res.render('turmas')
+
+        const {id} = req.params
+        const turma = await Turma.findAll({
+            include:'turma_curso',
+            required: true,
+
+        })
+        
+        res.render('turmas',{turma})
     }
 
 }

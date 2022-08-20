@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homePageRoutes);
 app.use('/cursos', cursoRoutes);
-app.use('/turmas', cursoRoutes);
+app.use('/turmas', turmasRoutes);
 
 
 
